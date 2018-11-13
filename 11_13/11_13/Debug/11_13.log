@@ -1,0 +1,5 @@
+﻿  test.c
+e:\github\hzzcoding\11_13\11_13\test.c(3): warning C4013: “assert”未定义；假设外部返回 int
+e:\github\hzzcoding\11_13\11_13\test.c(14): error C2084: 函数“int my_strcmp(const char *,const char *)”已有主体
+  e:\github\hzzcoding\11_13\11_13\test.c(1): note: 参见“my_strcmp”的前一个定义
+e:\github\hzzcoding\11_13\11_13\test.c(33): warning C4013: “system”未定义；假设外部返回 int
