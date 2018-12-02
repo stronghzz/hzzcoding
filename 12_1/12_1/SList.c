@@ -8,7 +8,13 @@ void SListInit(SList* list)
 }
 void SListDestory(SList* list)
 {
+	SListNode *next;
+	for (SListNode *cur = list->first; cur != NULL; cur = next) {
+		next = cur->next;
+		free(cur);
+	}
 
+	list->first = NULL;
 }
 
 SListNode* BuySListNode(SLTDataType x)
@@ -100,6 +106,17 @@ void SListPrint(SList* list)
 		printf("%d --> ", cur->data);
 	}
 	printf("NULL\n");
+}
+SListNode* SListFind(SList* list, SLTDataType x)
+{
+	for (SListNode *cur = list->first; cur != NULL; cur = cur->next) {
+		if (cur->data == x) {
+			return cur;
+		}
+	}
+
+	// √ª’“µΩ
+	return NULL;
 }
 void SListRemove(SList *list, SLTDataType data)
 {
