@@ -1,0 +1,22 @@
+
+#ifndef _DUANXINUART1_H
+#define _DUANXINUART1_H
+#include <ioCC2530.h>
+#include "hal_board_cfg.h"
+#include "hal_defs.h"
+#include "hal_types.h"
+#define uint unsigned int
+#define uchar unsigned char
+
+extern void delay_50ms1(uint16 t);
+extern void delay_50ms(uint16 t);
+extern char judgeyanwu(void);
+extern void InitUart1(void);
+extern void printsuart(char *s);
+extern void send_call(void);
+extern void send_cmgf(void);
+extern void send_csca(void);
+extern void send_cmgs(void);
+extern void sendmessage(void);
+extern uint8 send_a_byte(char c);
+

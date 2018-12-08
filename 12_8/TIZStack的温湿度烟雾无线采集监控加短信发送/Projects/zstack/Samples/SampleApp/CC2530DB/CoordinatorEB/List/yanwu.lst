@@ -1,0 +1,323 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.51A/W32 for 8051                07/Jul/2013  18:21:53 #
+# Copyright 2004-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\yanwu\yanwu. #
+#                          c                                                  #
+#    Command line       =  -f D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ            #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg (-DSECURE=0              #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x266F                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\yanwu\yanwu. #
+#                          c -D ZAPP_P1 -D MT_TASK -D MT_SYS_FUNC -D          #
+#                          MT_ZDO_FUNC -D xLCD_SUPPORTED=DEBUG -lC            #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\CoordinatorE #
+#                          B\List\ -lA D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É #
+#                          ¼¯¼à¿Ø\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          CoordinatorEB\List\ --diag_suppress Pe001,Pa010    #
+#                          -o D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\Obj\ -e --require_prototypes --debug          #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ #
+#                          ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\ -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏ #
+#                          ß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\SOURCE\ -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎ #
+#                          ÞÏß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\ZMAIN\TI2530DB\ -I                   #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\MT\ -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑ #
+#                          ÌÎíÎÞÏß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\    #
+#                          -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I           #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\OSAL\MCU\CCSOC\ -I                   #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\OSAL\INCLUDE\ -I                     #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\AF\ -I                         #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\NWK\ -I                        #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\SEC\ -I                        #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\SAPI\ -I                       #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\SYS\ -I                        #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\STACK\ZDO\ -I                        #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\ZMAC\F8W\ -I                         #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\ZMAC\ -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ #
+#                          ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADD #
+#                          R\ -I D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\SERVICES\SDATA\ -I             #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\MAC\INCLUDE\ -I                      #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\MAC\HIGH_LEVEL\ -I                   #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I              #
+#                          D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\ #
+#                          ..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -I  #
+#                          "C:\Program Files\IAR Systems\Embedded Workbench   #
+#                          5.3 Evaluation version\8051\INC\" -I "C:\Program   #
+#                          Files\IAR Systems\Embedded Workbench 5.3           #
+#                          Evaluation version\8051\INC\CLIB\" -Ohz            #
+#    List file          =  D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\CoordinatorE #
+#                          B\List\yanwu.lst                                   #
+#    Object file        =  D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Proje #
+#                          cts\zstack\Samples\SampleApp\CC2530DB\CoordinatorE #
+#                          B\Obj\yanwu.r51                                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\TIzigbee\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø\Projects\zstack\Samples\SampleApp\CC2530DB\yanwu\yanwu.c
+      1          /***********************************************************************************
+      2          Filename: yanwu.c
+      3          Prozessor: 80C51 family
+      4          
+      5          ***********************************************************************************/
+      6          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      7          #include "yanwu.h"
+      8          
+      9          #define uint unsigned int
+     10          #define uchar unsigned char
+     11          
+     12          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     13          char yanwuflag=0;
+   \                     yanwuflag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     14          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     15          void yanwuDelay(uint n)
+   \                     yanwuDelay:
+     16          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     17              uint i,t;
+     18              for(i = 0;i<5;i++);
+     19              for(t = 0;t<n;t++);
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??yanwuDelay_0
+   \                     ??yanwuDelay_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??yanwuDelay_0:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9A           SUBB    A,R2
+   \   000011   E9           MOV     A,R1
+   \   000012   9B           SUBB    A,R3
+   \   000013   40F1         JC      ??yanwuDelay_1
+     20          }
+   \   000015   02....       LJMP    ?BRET
+     21          
+     22          /*****************************************
+     23          //ÑÌÎí³õÊ¼»¯
+     24          *****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     25          void yanwuInit(void)
+   \                     yanwuInit:
+     26          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     27                // P1_2 input io initialized.
+     28              P1DIR &= ~(0x01<<2);//P1_2 input mode
+   \   000004   53FEFB       ANL     0xfe,#0xfb
+     29              P1INP &= ~(0x01<<2);//P1_2 Pull up  
+   \   000007   53F6FB       ANL     0xf6,#0xfb
+     30           
+     31              yanwuDelay(20);
+   \   00000A                ; Setup parameters for call to function yanwuDelay
+   \   00000A   7A14         MOV     R2,#0x14
+   \   00000C   7B00         MOV     R3,#0x0
+   \   00000E   12....       LCALL   ??yanwuDelay?relay
+     32          }
+   \   000011                REQUIRE ?Subroutine0
+   \   000011                REQUIRE P1INP
+   \   000011                REQUIRE P1DIR
+   \   000011                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     33          
+     34          
+     35          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          char judgeyanwu(void)
+   \                     judgeyanwu:
+     37          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     38              yanwuflag=P1_2;
+   \   000004   A292         MOV     C,0x90.2
+   \   000006   E4           CLR     A
+   \   000007   92E0         MOV     0xE0 /* A   */.0,C
+   \   000009   90....       MOV     DPTR,#yanwuflag
+   \   00000C   F0           MOVX    @DPTR,A
+     39              
+     40             if(yanwuflag==1)
+   \   00000D   6401         XRL     A,#0x1
+   \   00000F   7004         JNZ     ??judgeyanwu_0
+     41                return 1;
+   \   000011   7901         MOV     R1,#0x1
+   \   000013   8002         SJMP    ??judgeyanwu_1
+     42             else
+     43                return 0;
+   \                     ??judgeyanwu_0:
+   \   000015   7900         MOV     R1,#0x0
+   \                     ??judgeyanwu_1:
+   \   000017   80..         SJMP    ?Subroutine0
+   \   000019                REQUIRE _A_P1
+     44             // yanwuDelay(50000);
+     45          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??yanwuDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    yanwuDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??yanwuInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    yanwuInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??judgeyanwu?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    judgeyanwu
+     46          
+     47           
+     48          	
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     judgeyanwu          2      0      0
+     yanwuDelay          0      0      0
+     yanwuInit           2      0      0
+       -> yanwuDelay     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label     Bytes
+     --------------     -----
+     _A_P1                 1
+     P1INP                 1
+     P1DIR                 1
+     yanwuflag             1
+     yanwuDelay           24
+     yanwuInit            17
+     ?Subroutine0          7
+     judgeyanwu           25
+     ??yanwuDelay?relay    6
+     ??yanwuInit?relay     6
+     ??judgeyanwu?relay    6
+
+ 
+ 73 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  3 bytes in segment SFR_AN
+  1 byte  in segment XDATA_Z
+ 
+ 91 bytes of CODE  memory
+  0 bytes of DATA  memory (+ 3 bytes shared)
+  1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

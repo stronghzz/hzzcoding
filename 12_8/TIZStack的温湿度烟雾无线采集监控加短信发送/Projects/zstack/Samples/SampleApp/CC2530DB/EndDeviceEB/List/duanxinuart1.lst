@@ -1,0 +1,820 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.51A/W32 for 8051                29/Aug/2017  17:59:13 #
+# Copyright 2004-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \duanxinuart1\duanxinuart1.c                       #
+#    Command line       =  -f F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼ #
+#                          à¿Ø\success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø #
+#                          ¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg           #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wConfig.cfg             #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x266F                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \duanxinuart1\duanxinuart1.c -D NWK_AUTO_POLL -D   #
+#                          ZAPP_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC   #
+#                          -D xLCD_SUPPORTED=DEBUG -lC                        #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \EndDeviceEB\List\ -lA F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ #
+#                          ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø\success--2013\TIZStackµÄÎÂ #
+#                          Êª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\EndDeviceEB\List\          #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \EndDeviceEB\Obj\ -e --require_prototypes --debug  #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ #
+#                          ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø\success--2013\TIZStackµÄÎÂ #
+#                          Êª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\ -I                        #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\SOURCE\ -I F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾º #
+#                          Èü\ÖÇÄÜ³ø·¿¼à¿Ø\success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎí #
+#                          ÎÞÏß²É¼¯¼à¿Ø¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Samples\Sam #
+#                          pleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I        #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\MT\ -I                  #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I         #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\    #
+#                          -I F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼ #
+#                          à¿Ø\success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø #
+#                          ¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I   #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I        #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\AF\ -I            #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\NWK\ -I           #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\SEC\ -I           #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I          #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\SYS\ -I           #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I           #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I            #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\ZMAC\ -I                #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I      #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I      #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I         #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I      #
+#                          F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\    #
+#                          -I F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼ #
+#                          à¿Ø\success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø #
+#                          ¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC253 #
+#                          0DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ #
+#                          SINGLE_CHIP\ -I "C:\Program Files\IAR              #
+#                          Systems\Embedded Workbench 5.3 Evaluation          #
+#                          version\8051\INC\" -I "C:\Program Files\IAR        #
+#                          Systems\Embedded Workbench 5.3 Evaluation          #
+#                          version\8051\INC\CLIB\" -Ohz                       #
+#    List file          =  F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \EndDeviceEB\List\duanxinuart1.lst                 #
+#    Object file        =  F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø #
+#                          \success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ #
+#                          ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB #
+#                          \EndDeviceEB\Obj\duanxinuart1.r51                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\114---´óÑ§Éú¾ºÈü\¾ºÈüÏîÄ¿\2013¾ºÈü\ÖÇÄÜ³ø·¿¼à¿Ø\success--2013\TIZStackµÄÎÂÊª¶ÈÑÌÎíÎÞÏß²É¼¯¼à¿Ø¼Ó¶ÌÐÅ·¢ËÍ\Projects\zstack\Samples\SampleApp\CC2530DB\duanxinuart1\duanxinuart1.c
+      1          /***********************************************************************************
+      2          Filename: duanxinuart1.c
+      3          Prozessor: 80C51 family
+      4          
+      5          ***********************************************************************************/
+      6          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe8
+   \   union <unnamed> volatile __sfr _A_IRCON2
+   \                     _A_IRCON2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf8
+   \   union <unnamed> volatile __sfr _A_U1CSR
+   \                     _A_U1CSR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf9
+   \   unsigned char volatile __sfr U1DBUF
+   \                     U1DBUF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfa
+   \   unsigned char volatile __sfr U1BAUD
+   \                     U1BAUD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfb
+   \   unsigned char volatile __sfr U1UCR
+   \                     U1UCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfc
+   \   unsigned char volatile __sfr U1GCR
+   \                     U1GCR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      7          #include "duanxinuart1.h"
+      8          #include "hal_board_cfg.h"
+      9          #include "hal_defs.h"
+     10          #include "hal_types.h"
+     11          #define uint unsigned int
+     12          #define uchar unsigned char
+     13          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     14          extern int readflag=0;
+   \                     readflag:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     15          extern  unsigned char *duanxinStr;
+     16          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          void  delay_50ms(uint t)
+   \                     delay_50ms:
+     18           {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8008         SJMP    ??delay_50ms_0
+     19          	uint j;
+     20          	for(;t>0;t--)
+     21          	for(j=6245;j>0;j--);
+   \                     ??delay_50ms_1:
+   \   000002   EA           MOV     A,R2
+   \   000003   24FF         ADD     A,#-0x1
+   \   000005   1A           DEC     R2
+   \   000006   EB           MOV     A,R3
+   \   000007   34FF         ADDC    A,#-0x1
+   \   000009   FB           MOV     R3,A
+   \                     ??delay_50ms_0:
+   \   00000A   EA           MOV     A,R2
+   \   00000B   7001         JNZ     ??delay_50ms_2
+   \   00000D   EB           MOV     A,R3
+   \                     ??delay_50ms_2:
+   \   00000E   70F2         JNZ     ??delay_50ms_1
+     22          }
+   \   000010   02....       LJMP    ?BRET
+     23          /*****************************************
+     24          //uart1³õÊ¼»¯
+     25          *****************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     26          void InitUart1(void)
+   \                     InitUart1:
+     27          {	
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     28           // CLKCONCMD &= ~0x40;                          //ÉèÖÃÏµÍ³Ê±ÖÓÔ´Îª32MHZ¾§Õñ
+     29           // while(CLKCONSTA & 0x40);                     //µÈ´ý¾§ÕñÎÈ¶¨
+     30           // CLKCONCMD &= ~0x47;                          //ÉèÖÃÏµÍ³Ö÷Ê±ÖÓÆµÂÊÎª32MHZ
+     31            
+     32            P1SEL |= 0xc0; //1100 0000  0ÎªÆÕÍ¨¿Ú£¬1ÎªÍâÉè P1 6TX 7RX ÎªUART1
+   \   000000   43F4C0       ORL     0xf4,#0xc0
+   \   000003   E5F4         MOV     A,0xf4
+     33            P2DIR=0X40;
+   \   000005   75FF40       MOV     0xff,#0x40
+     34            U1CSR |= 0x80;
+   \   000008   D2FF         SETB    0xf8.7
+     35            PERCFG |= 0x02;
+   \   00000A   43F102       ORL     0xf1,#0x2
+     36            //HAL_BOARD_INIT();//°å¼¶³õÊ¼»¯
+     37            U1GCR =9;    //BAUD_E = 9  //19200 
+   \   00000D   75FC09       MOV     0xfc,#0x9
+     38            U1BAUD = 59;  //BAUD_M =59   ²¨ÌØÂÊ¼ÆËã¹«Ê½ (256+BAUD_M)
+   \   000010   75FA3B       MOV     0xfa,#0x3b
+     39            //UART_SETUP(1, 19200, HIGH_STOP);  // ´®¿ÚÉèÖÃ
+     40            UTX1IF=1;
+   \   000013   D2EA         SETB    0xe8.2
+     41            URX1IF=0;
+   \   000015   C28F         CLR     0x88.7
+     42            U1UCR |=0x82;
+   \   000017   43FB82       ORL     0xfb,#0x82
+   \   00001A   E5FB         MOV     A,0xfb
+     43          
+     44            U1CSR |= 0X40;				//ÔÊÐí½ÓÊÕ
+   \   00001C   D2FE         SETB    0xf8.6
+     45            IEN0 |= 0x88;				//¿ª×ÜÖÐ¶Ï£¬½ÓÊÕÖÐ¶Ï
+   \   00001E   43A888       ORL     0xa8,#0x88
+   \   000021   E5A8         MOV     A,0xa8
+     46            
+     47          }
+   \   000023   02....       LJMP    ?BRET
+   \   000026                REQUIRE _A_TCON
+   \   000026                REQUIRE _A_IEN0
+   \   000026                REQUIRE _A_IRCON2
+   \   000026                REQUIRE PERCFG
+   \   000026                REQUIRE P1SEL
+   \   000026                REQUIRE _A_U1CSR
+   \   000026                REQUIRE U1BAUD
+   \   000026                REQUIRE U1UCR
+   \   000026                REQUIRE U1GCR
+   \   000026                REQUIRE P2DIR
+     48          
+     49          /*********************************************************************
+     50           * º¯ÊýÃû³Æ£ºsenduart_a_byte
+     51           * ¹¦    ÄÜ£º·¢ËÍÒ»¸ö×Ö·û
+     52           * Èë¿Ú²ÎÊý£ºc  ·¢ËÍµÄ×Ö·û
+     53           * ³ö¿Ú²ÎÊý£ºÎÞ
+     54           * ·µ »Ø Öµ£ºÎÞ
+     55           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     56          uint8 senduart_a_byte(char c)  
+   \                     senduart_a_byte:
+     57          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     58            /*if(c == '\n')  
+     59           {
+     60              while(!UTX1IF);
+     61             U1DBUF = 0x0d;   
+     62           }*/
+     63            
+     64             while (!UTX1IF);
+   \                     ??senduart_a_byte_0:
+   \   000000   A2EA         MOV     C,0xe8.2
+   \   000002   50FC         JNC     ??senduart_a_byte_0
+     65             UTX1IF = 0;
+   \   000004   C2EA         CLR     0xe8.2
+     66             return(U1DBUF = c);
+   \   000006   89F9         MOV     0xf9,R1
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE _A_IRCON2
+   \   00000B                REQUIRE U1DBUF
+     67          }
+     68          
+     69          
+     70          /*********************************************************************
+     71           * º¯ÊýÃû³Æ£ºread_a_byte
+     72           * ¹¦    ÄÜ£º½ÓÊÕÒ»¸ö×Ö·û
+     73           * Èë¿Ú²ÎÊý£ºÎÞ
+     74           * ³ö¿Ú²ÎÊý£º
+     75           * ·µ »Ø Öµ£º½ÓÊÕµÄ×Ö·û
+     76           ********************************************************************/
+     77          //uint8 read_a_byte( )  
+     78          //{
+     79           
+     80          //   char b;
+     81          //   if(URX1IF)
+     82          //   {
+     83          //     b=U1DBUF;
+     84          //     readflag=1;
+     85          //     URX1IF = 0;
+     86          //   }
+     87          //   return (b);
+     88          //}
+     89          
+     90          /*********************************************************************
+     91           * º¯ÊýÃû³Æ£ºprintsuart
+     92           * ¹¦    ÄÜ£º·¢ËÍÒ»´®×Ö·û
+     93           * Èë¿Ú²ÎÊý£ºs         ×Ö·û´®Ö¸Õë
+     94           * ³ö¿Ú²ÎÊý£ºÎÞ
+     95           * ·µ »Ø Öµ£ºÎÞ
+     96           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     97          void printsuart(char *s)
+   \                     printsuart:
+     98          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   800C         SJMP    ??printsuart_0
+     99           //uint8 i = 0;
+    100           
+    101            while(*s)//while(s[i] != '\0')    // ÅÐ¶Ï×Ö·û´®ÊÇ·ñ½áÊø
+    102            {
+    103              senduart_a_byte(*s);// ·¢ËÍÒ»×Ö½Ú
+   \                     ??printsuart_1:
+   \   00000B                ; Setup parameters for call to function senduart_a_byte
+   \   00000B   12....       LCALL   ??senduart_a_byte?relay
+    104              s++;
+   \   00000E   8E82         MOV     DPL,R6
+   \   000010   8F83         MOV     DPH,R7
+   \   000012   A3           INC     DPTR
+   \   000013   AE82         MOV     R6,DPL
+   \   000015   AF83         MOV     R7,DPH
+    105            }
+   \                     ??printsuart_0:
+   \   000017   8E82         MOV     DPL,R6
+   \   000019   8F83         MOV     DPH,R7
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F9           MOV     R1,A
+   \   00001D   70EC         JNZ     ??printsuart_1
+    106           
+    107          }
+   \   00001F   7F01         MOV     R7,#0x1
+   \   000021   02....       LJMP    ?BANKED_LEAVE_XDATA
+    108          
+    109          /*********************************************************************
+    110           * º¯ÊýÃû³Æ£ºreadinstr
+    111           * ¹¦    ÄÜ£º½ÓÊÕÒ»´®×Ö·û
+    112           * Èë¿Ú²ÎÊý£ºÎÞ
+    113           * ³ö¿Ú²ÎÊý£ºÎÞ
+    114           * ·µ »Ø Öµ£º×Ö·û´®
+    115           ********************************************************************/
+    116          //void readinstr( )
+    117          //{
+    118          
+    119          //  if(URX1IF)
+    120           //  {
+    121           //   *duanxinStr= U1DBUF; //±£´æ×Ö·û
+    122           //   URX1IF=0; //ÇåURX1IF
+    123           //    readflag=1;
+    124           //  }
+    125           //while(*duanxinStr!= '\0') //ÅÐ¶ÏÊÇ·ñµ½ÁË×Ö·û´®µÄÎ²²¿
+    126           //{
+    127           //  while(!URX1IF); //¿ÕÓï¾äÅÐ¶Ï×Ö·ûÊÇ·ñÊÕÍê
+    128           // duanxinStr++; //×Ö·û´®Ö¸Õë¼ÓÒ»
+    129           // *duanxinStr= U1DBUF; //±£´æ×Ö·û
+    130           //  URX1IF=0; //ÇåURX1IF
+    131           //}
+    132          //}
+    133          
+    134          
+    135          /*****************************************
+    136          //uart1·¢ËÍ
+    137          *****************************************/
+    138          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    139          char message[]={"Warning:the gas leak!"};
+   \                     message:
+   \   000000                DS 22
+   \   000016                REQUIRE `?<Initializer for message>`
+   \   000016                REQUIRE __INIT_XDATA_I
+    140          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    141          char AT_CMGF[]={"AT+CMGF=1"};//ÉèÖÃ¶ÌÐÅµÄ¸ñÊ½ÎªPDU¸ñÊ½
+   \                     AT_CMGF:
+   \   000000                DS 10
+   \   00000A                REQUIRE `?<Initializer for AT_CMGF>`
+   \   00000A                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    142          char AT_CSCA[]={"AT+CSCA=\"+8613800290500\""};//ÉèÖÃÒÆ¶¯·þÎñÖÐÐÄºÅÂë
+   \                     AT_CSCA:
+   \   000000                DS 25
+   \   000019                REQUIRE `?<Initializer for AT_CSCA>`
+   \   000019                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    143          char AT_CMGS[]={"AT+CMGS=\"1252018700443632\""};//·¢ËÍ¶ÌÐÅÖ¸Áî£¬ÐèÒª½ÓÊÕ¶ÌÐÅµÄÊÖ»úºÅÂë,×¢ÒâÒª¶¨ÒåÎª×Ö·û´®£¨\0£©
+   \                     AT_CMGS:
+   \   000000                DS 27
+   \   00001B                REQUIRE `?<Initializer for AT_CMGS>`
+   \   00001B                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    144          char  call_number[]={"ATD15191897096;"};
+   \                     call_number:
+   \   000000                DS 16
+   \   000010                REQUIRE `?<Initializer for call_number>`
+   \   000010                REQUIRE __INIT_XDATA_I
+    145          //char s1=0x0D;
+    146          //char s2=0x0A;
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    147          void send_call(void)
+   \                     send_call:
+    148          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    149          	printsuart(call_number);
+   \   000004                ; Setup parameters for call to function printsuart
+   \   000004   7A..         MOV     R2,#(call_number & 0xff)
+   \   000006   7B..         MOV     R3,#((call_number >> 8) & 0xff)
+   \   000008   80..         SJMP    ?Subroutine2
+    150                  senduart_a_byte(0x0D);
+    151                  senduart_a_byte(0x0A);
+    152          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ?Subroutine0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000003                REQUIRE ??Subroutine3_0
+   \   000003                ; // Fall through to label ??Subroutine3_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine3_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ??printsuart?relay
+   \   000003                ; Setup parameters for call to function senduart_a_byte
+   \   000003                ; Setup parameters for call to function senduart_a_byte
+   \   000003                ; Setup parameters for call to function senduart_a_byte
+   \   000003                ; Setup parameters for call to function senduart_a_byte
+   \   000003   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   790D         MOV     R1,#0xd
+   \   000002   12....       LCALL   ??senduart_a_byte?relay
+   \   000005                ; Setup parameters for call to function senduart_a_byte
+   \   000005                ; Setup parameters for call to function senduart_a_byte
+   \   000005                ; Setup parameters for call to function senduart_a_byte
+   \   000005                ; Setup parameters for call to function senduart_a_byte
+   \   000005                ; Setup parameters for call to function senduart_a_byte
+   \   000005   790A         MOV     R1,#0xa
+   \   000007   12....       LCALL   ??senduart_a_byte?relay
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    153          void send_cmgf(void)
+   \                     send_cmgf:
+    154          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    155          	printsuart(AT_CMGF);
+   \   000004                ; Setup parameters for call to function printsuart
+   \   000004   7A..         MOV     R2,#(AT_CMGF & 0xff)
+   \   000006   7B..         MOV     R3,#((AT_CMGF >> 8) & 0xff)
+   \   000008   80..         SJMP    ?Subroutine2
+    156                  senduart_a_byte(0x0D);
+    157                  senduart_a_byte(0x0A);
+    158          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    159          void send_csca(void)
+   \                     send_csca:
+    160          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    161          	printsuart(AT_CSCA);
+   \   000004                ; Setup parameters for call to function printsuart
+   \   000004   7A..         MOV     R2,#(AT_CSCA & 0xff)
+   \   000006   7B..         MOV     R3,#((AT_CSCA >> 8) & 0xff)
+   \   000008                REQUIRE ?Subroutine2
+   \   000008                ; // Fall through to label ?Subroutine2
+    162                  senduart_a_byte(0x0D);
+    163                  senduart_a_byte(0x0A);
+    164          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    165          void send_cmgs(void)
+   \                     send_cmgs:
+    166          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    167          	printsuart(AT_CMGS);
+   \   000004                ; Setup parameters for call to function printsuart
+   \   000004   7A..         MOV     R2,#(AT_CMGS & 0xff)
+   \   000006   7B..         MOV     R3,#((AT_CMGS >> 8) & 0xff)
+   \   000008   80..         SJMP    ?Subroutine2
+    168                  senduart_a_byte(0x0D);
+    169                  senduart_a_byte(0x0A);
+    170          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    171          void sendmessage(void)
+   \                     sendmessage:
+    172          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    173          	printsuart(message);
+   \   000004                ; Setup parameters for call to function printsuart
+   \   000004   7A..         MOV     R2,#(message & 0xff)
+   \   000006   7B..         MOV     R3,#((message >> 8) & 0xff)
+   \   000008   12....       LCALL   ??printsuart?relay
+    174                  //delay_50ms(30);
+    175          	senduart_a_byte(0x1A);
+   \   00000B                ; Setup parameters for call to function senduart_a_byte
+   \   00000B   791A         MOV     R1,#0x1a
+   \   00000D   12....       LCALL   ??senduart_a_byte?relay
+    176                  senduart_a_byte(0x0D);
+   \   000010                ; Setup parameters for call to function senduart_a_byte
+   \   000010   12....       LCALL   ?Subroutine1 & 0xFFFF
+    177                  senduart_a_byte(0x0A);
+    178          }
+   \                     ??CrossCallReturnLabel_2:
+   \   000013   80..         SJMP    ??Subroutine3_0
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for message>`:
+   \   000000   5761726E     DB "Warning:the gas leak!"
+   \            696E673A
+   \            74686520
+   \            67617320
+   \            6C65616B
+   \            2100    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_CMGF>`:
+   \   000000   41542B43     DB "AT+CMGF=1"
+   \            4D47463D
+   \            3100    
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_CSCA>`:
+   \   000000   41542B43     DB "AT+CSCA=\"+8613800290500\""
+   \            5343413D
+   \            222B3836
+   \            31333830
+   \            30323930
+   \            35303022
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AT_CMGS>`:
+   \   000000   41542B43     DB "AT+CMGS=\"1252018700443632\""
+   \            4D47533D
+   \            22313235
+   \            32303138
+   \            37303034
+   \            34333633
+   \            322200  
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for call_number>`:
+   \   000000   41544431     DB "ATD15191897096;"
+   \            35313931
+   \            38393730
+   \            39363B00
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_50ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_50ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitUart1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitUart1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??senduart_a_byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    senduart_a_byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??printsuart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    printsuart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_call?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_call
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_cmgf?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_cmgf
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_csca?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_csca
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_cmgs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_cmgs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sendmessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sendmessage
+    179          
+    180          
+    181          /*****************************************
+    182          //uart1½ÓÊÕ
+    183          *****************************************/ 
+    184          	
+    185          
+    186          
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     InitUart1                0      0      0
+     delay_50ms               0      0      0
+     printsuart               0      0      9
+       -> senduart_a_byte     0      0     18
+     send_call                2      0      0
+       -> printsuart          4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+     send_cmgf                2      0      0
+       -> printsuart          4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+     send_cmgs                2      0      0
+       -> printsuart          4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+     send_csca                2      0      0
+       -> printsuart          4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+     sendmessage              2      0      0
+       -> printsuart          4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+       -> senduart_a_byte     4      0      0
+     senduart_a_byte          0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     _A_TCON                           1
+     _A_IEN0                           1
+     _A_IRCON2                         1
+     PERCFG                            1
+     P1SEL                             1
+     _A_U1CSR                          1
+     U1DBUF                            1
+     U1BAUD                            1
+     U1UCR                             1
+     U1GCR                             1
+     P2DIR                             1
+     readflag                          2
+     delay_50ms                       19
+     InitUart1                        38
+     senduart_a_byte                  11
+     printsuart                       36
+     message                          22
+     AT_CMGF                          10
+     AT_CSCA                          25
+     AT_CMGS                          27
+     call_number                      16
+     send_call                        10
+     ?Subroutine2                      3
+     ??Subroutine3_0                   7
+     ?Subroutine0                      7
+     ?Subroutine1                     11
+     send_cmgf                        10
+     send_csca                         8
+     send_cmgs                        10
+     sendmessage                      21
+     ?<Initializer for message>       22
+     ?<Initializer for AT_CMGF>       10
+     ?<Initializer for AT_CSCA>       25
+     ?<Initializer for AT_CMGS>       27
+     ?<Initializer for call_number>   16
+     ??delay_50ms?relay                6
+     ??InitUart1?relay                 6
+     ??senduart_a_byte?relay           6
+     ??printsuart?relay                6
+     ??send_call?relay                 6
+     ??send_cmgf?relay                 6
+     ??send_csca?relay                 6
+     ??send_cmgs?relay                 6
+     ??sendmessage?relay               6
+
+ 
+ 191 bytes in segment BANKED_CODE
+  54 bytes in segment BANK_RELAYS
+  11 bytes in segment SFR_AN
+ 100 bytes in segment XDATA_I
+ 100 bytes in segment XDATA_ID
+   2 bytes in segment XDATA_Z
+ 
+ 345 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 11 bytes shared)
+ 102 bytes of XDATA memory
+
+Errors: none
+Warnings: none
