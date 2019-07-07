@@ -1,9 +1,9 @@
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <math.h>
-using namespace std;
-
+//#include <iostream>
+//#include <math.h>
+//using namespace std;
+//
 //class Person
 //{
 //public:
@@ -53,8 +53,8 @@ using namespace std;
 //	t.Print();
 //	return 0;
 //}
-
-
+//
+//
 //class Base
 //{
 //public:
@@ -94,7 +94,7 @@ using namespace std;
 //	ptr->display();
 //	return 0;
 //}
-
+//
 //class Shape
 //{
 //public:
@@ -221,54 +221,334 @@ using namespace std;
 //	ptr->print();
 //	return 0;
 //}
+//
+//class Shape
+//{
+//public:
+//	virtual void Print()
+//	{
+//		
+//	}
+//};
+//class Circle :public Shape
+//{
+//public:
+//	Circle(double centerX,double centerY,double radius)
+//		:_radius(radius)
+//	{
+//	}
+//	virtual void Print()
+//	{
+//		double ret = 2 * 3.14*_radius;
+//		cout << "圆的周长：" << ret << endl;
+//	}
+//private:
+//	double _radius;
+//};
+//class Square:public Shape
+//{
+//public:
+//	Square(double centerX,double centerY,double peakX,double peakY)
+//	{
+//		_width = 2 * abs(peakY - centerY);
+//	}
+//	virtual void Print()
+//	{
+//		double ret = 4 * _width;
+//		cout << "正方形周长：" << ret << endl;
+//	}
+//private:
+//	double _width;
+//};
+//
+//int main()
+//{
+//	Shape* p1, *p2;
+//	p1 = new Circle(3, 3.5, 2);
+//	p2 = new Square(4.5, 5, 6.2, 5);
+//	p1->Print();
+//	p2->Print();
+//
+//	delete p1, p2;
+//	return 0;
+//}
 
-class Shape
+//#include "iostream"
+//#include "cmath"
+//using namespace std;
+//void main()
+//{
+//	double a, b, c, s,area;
+//	cout << "please inputa, b, c=?"; 
+//	cin >> a >> b >> c;
+//	if (a + b>c && b + c > a && c + a > b)
+//	{
+//		s = (a + b + c) / 2;
+//		area = sqrt(s*(8 - a) *(s - b)*(8 - c)); cout << "area ="<< area;
+//	}
+//	else
+//		cout << "输人的数据不能构成三角形";
+//
+//
+//}
+
+
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//void main()
+//{
+//	double a, b, c, delta, p, q;
+//	cout << "please input a,b,c = ?" << endl;;
+//	cin >> a >> b >> c;
+//	delta = b * b - 4*a*c;
+//	p = -b / (2 * a);
+//	q = sqrt(fabs(delta)) / (2 * a);
+//	if (delta > 0)
+//		cout << "两个实根为：x1 = " << p + q << endl << "x2 = " << p - q << endl;
+//	else
+//		if (delta == 0)
+//		{
+//			cout << "两个等根为：x1 = x2 =" << p << endl;
+//		}
+//		else
+//		{
+//			cout << "两个虚根为:"<<endl;
+//			cout << "x1 = " << p << " +j" << q<<endl;
+//			cout << "x2 = " << p << " -j" << q << endl;
+//		}
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//int max(int x, int y);
+//void main()
+//{
+//	cout << "Enter two integer:";
+//	int a, b;
+//	cin >> a >> b;
+//	cout << "The maxium number is " << max(a, b) << endl;
+//}
+//int max(int x, int y)
+//{
+//	return x > y ? x : y;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//void swap(int& x, int& y)
+//{
+//	int tmp = x;
+//	x = y;
+//	y = tmp;
+//}
+//void main()
+//{
+//	int a = 1, b = 2;
+//	cout << "Before exchange:a = " << a << ",b = " << b << endl;
+//	swap(a, b);
+//	cout << "After exchange:a = " << a << ",b = " << b << endl;
+//}
+//#include <iostream>
+//#include <cmath>
+//using namespace std;
+//void swap(int* xp, int* yp)
+//{
+//	int tmp = *xp;
+//	*xp = *yp;
+//	*yp = tmp;
+//}
+//void main()
+//{
+//	int a = 1, b = 2;
+//	cout << "Before exchange:a = " << a << ",b = " << b << endl;
+//	swap(a, b);
+//	cout << "After exchange:a = " << a << ",b = " << b << endl;
+//}
+
+//#include "cstring"
+//#include "iostream"
+//using namespace std;
+//class Person
+//{
+//private:
+//	char m_strName[20];
+//	int m_nAge;
+//	int m_nSex;
+//public:
+//	Person()
+//	{
+//		strcpy(m_strName, "XXX");
+//		m_nAge = 0;
+//		m_nSex = 0;
+//	}
+//	~Person()
+//	{
+//		cout << "Now destroying the instance of Person" << endl;
+//	}
+//	void Register(const char* name, int age, char sex);
+//	char* GetName();
+//	int GetAge();
+//	char GetSex();
+//	void ShowPerson();
+//};
+//void Person::Register(const char* name, int age, char sex)
+//{
+//	strcpy(m_strName, name);
+//	m_nAge = age;
+//	m_nSex = (sex == 'm' ? 0 : 1);
+//}
+//char* Person::GetName()
+//{
+//	return m_strName;
+//}
+//int Person::GetAge()
+//{
+//	return m_nAge;
+//}
+//char Person::GetSex()
+//{
+//	return (m_nSex == 0 ? 'm' : 'f');
+//}
+//void Person::ShowPerson()
+//{
+//	cout << GetName() << '\t' << GetAge() << '\t' << GetSex() << endl;
+//}
+//void main()
+//{
+//	Person *p1, *p2;
+//	p1 = new Person;
+//	cout << "person1:\t";
+//	p1->ShowPerson();
+//	p1->Register("Zhang3", 19, 'm');
+//	cout << "person1:\t";
+//	p1->ShowPerson();
+//	p2 = new Person;
+//	cout << "person2:\t";
+//	p2->ShowPerson();
+//	*p2 = *p1;
+//	cout << "person2:\t";
+//	p2->ShowPerson();
+//	delete p1;
+//	delete p2;
+//}
+//
+
+//#include <iostream>
+//using namespace std;
+//class Rectangle
+//{
+//public:
+//	void Init(int Len, int Wid);
+//	int IsRectangle();
+//	void Area();
+//private:
+//	int Length, Width;
+//	friend void Perimeter(Rectangle &f);
+//};
+//void Rectangle::Init(int Len, int Wid)
+//{
+//	Length = Len;
+//	Width = Wid;
+//}
+//int Rectangle::IsRectangle()
+//{
+//	if (Length <= 0 || Width <= 0)
+//		return 0;
+//	else
+//		return 1;
+//}
+//void Rectangle::Area()
+//{
+//	cout << "Area = " << Length * Width << endl;
+//}
+//void Perimeter(Rectangle &f)
+//{
+//	cout << "Perimeter = " << (f.Length + f.Width) * 2 << endl;
+//}
+//void main()
+//{
+//	Rectangle f1;
+//	f1.Init(4, 5);
+//	f1.Area();
+//	Perimeter(f1);
+//}
+#include <iostream>
+using namespace std;
+
+//class Point
+//{
+//public:
+//	Point()
+//	{
+//		x = 0;
+//		y = 0;
+//	}
+//	Point(int _x, int _y)
+//		:x(_x)
+//		, y(_y)
+//	{
+//
+//	}
+//	~Point()
+//	{
+//
+//	}
+//	void output()
+//	{
+//		cout << x << ' ' << y << endl;
+//	}
+//private:
+//	int x;
+//	int y;
+//};
+//int main()
+//{
+//	Point p1(5,5);
+//	p1.output();
+//	return 0;
+//}
+class Animal
 {
 public:
-	virtual void Print()
+	Animal()
 	{
-		
+		weight = 100;
+		height = 20;
 	}
-};
-class Circle :public Shape
-{
-public:
-	Circle(double centerX,double centerY,double radius)
-		:_radius(radius)
+	~Animal()
+	{}
+	void eat()
 	{
+		cout << "animal eating" << endl;
 	}
-	virtual void Print()
+	void breath()
 	{
-		double ret = 2 * 3.14*_radius;
-		cout << "圆的周长：" << ret << endl;
+		cout << "animal breathing" << endl;
+	}
+	void sleep()
+	{
+		cout << "animal sleeping" << endl;
 	}
 private:
-	double _radius;
+	int weight;
+	int height;
 };
-class Square:public Shape
+class Fish :public Animal
 {
 public:
-	Square(double centerX,double centerY,double peakX,double peakY)
+	Fish()
 	{
-		_width = 2 * abs(peakY - centerY);
-	}
-	virtual void Print()
-	{
-		double ret = 4 * _width;
-		cout << "正方形周长：" << ret << endl;
-	}
-private:
-	double _width;
-};
 
+	}
+
+};
 int main()
 {
-	Shape* p1, *p2;
-	p1 = new Circle(3, 3.5, 2);
-	p2 = new Square(4.5, 5, 6.2, 5);
-	p1->Print();
-	p2->Print();
 
-	delete p1, p2;
+	Animal an;
+	Fish fh;
+	an.eat();
+	fh.breath();
 	return 0;
 }
