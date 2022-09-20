@@ -7,33 +7,65 @@ using namespace std;
 
 int main()
 {
-	string tmp;
-	int X = 0, Y = 0;
-	cin >> tmp;
+	int X = 0;
+	int Y = 0;
+	string str;
+	cin >> str;
 	while (1)
 	{
-		if (tmp.find(';') == string::npos)//查到了
+		if (str.find(';') == string::npos)
 		{
 			break;
 		}
-		int ii = tmp.find(';');
-		string str = tmp.substr(0, (ii - 0));
-		if (str.size() == 3 && str.at(1) >= '0' && str.at(1) <= '9' && str.at(2) >= '0' && str.at(2) <= '9')
+		int i = str.find(';');
+		string temp = str.substr(0, (i-0));
+		if (temp.size() == 3 && temp.at(1) >= '0' && temp.at(1) <= '9' && temp.at(2) >= '0' && temp.at(2) <= '9'|| temp.size() == 2 && temp.at(1) >= '0' && temp.at(1) <= '9')
 		{
-			switch (str.at(0))
+			switch (temp.at(0))
 			{
-				case 'A':X -= stoi(str.substr(1), 0, 10); break;
-				case 'D':X += stoi(str.substr(1), 0, 10); break;
-				case 'W':Y += stoi(str.substr(1), 0, 10); break;
-				case 'S':Y -= stoi(str.substr(1), 0, 10); break;
-				default:break;
+			case 'A': X -= stoi(temp.substr(1), 0, 10); break;
+			case 'D': X += stoi(temp.substr(1), 0, 10); break;
+			case 'W': Y += stoi(temp.substr(1), 0, 10); break;
+			case 'S': Y -= stoi(temp.substr(1), 0, 10); break;
+			default:break;
 			}
 		}
-		tmp = tmp.substr(ii + 1);
+		str = str.substr(i + 1);
 	}
-	cout << X << "," << Y << "\n";
+	cout << X << ',' << Y << endl;
 	return 0;
 }
+
+//int main()
+//{	
+//	string tmp;
+//	int X = 0, Y = 0;
+//	cin >> tmp;
+//	while (1)
+//	{
+//		if (tmp.find(';') == string::npos)//没找到，退出
+//		{
+//			break;
+//		}
+//		int ii = tmp.find(';');
+//		string str = tmp.substr(0, (ii - 0));
+//		if (str.size() == 3 && str.at(1) >= '0' && str.at(1) <= '9' && str.at(2) >= '0' && str.at(2) <= '9')
+//		{
+//			switch (str.at(0))
+//			{
+//				case 'A':X -= stoi(str.substr(1), 0, 10); break;
+//				case 'D':X += stoi(str.substr(1), 0, 10); break;
+//				case 'W':Y += stoi(str.substr(1), 0, 10); break;
+//				case 'S':Y -= stoi(str.substr(1), 0, 10); break;
+//				default:break;
+//			}
+//		}
+//		tmp = tmp.substr(ii + 1);
+//	}
+//	cout << X << "," << Y << "\n";
+//	return 0;
+//}
+
 //int main()
 //{
 //	int N, m;
