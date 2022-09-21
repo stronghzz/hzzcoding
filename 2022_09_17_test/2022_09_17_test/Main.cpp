@@ -5,50 +5,51 @@
 #include <algorithm>
 using namespace std;
 
-//int main()
-//{
-//	int N, m;
-//	cin >> N >> m;
-//	N /= 10;
-//	vector<vector<int> > prices(61, vector<int>(3,0));
-//	vector<vector<int> > priceMutiplyPriority(61, vector<int>(3.0));
-//	for (int i = 1; i <= m; i++)
-//	{
-//		int a, b, c;
-//		cin >> a >> b >> c;
-//		a /= 10;
-//		b *= a;
-//		if (c == 0)
-//		{
-//			prices[i][0] = a;
-//			priceMutiplyPriority[i][0] = b;
-//		}
-//		else
-//		{
-//			if (prices[c][1] == 0)
-//			{
-//				prices[c][1] = a;
-//				priceMutiplyPriority[c][1] = b;
-//			}
-//		}
-//	}
-//	vector<vector<int> > dp(m + 1, vector<int>(N + 1, 0));
-//	for (int i = 1; i <= m; ++i)
-//	{
-//		for (int j = 1; j <= N; ++j)
-//		{
-//			int a = prices[i][0], b = priceMutiplyPriority[i][0];
-//			int c = prices[i][1], d = priceMutiplyPriority[i][1];
-//			int e = prices[i][2], f = priceMutiplyPriority[i][2];
-//			dp[i][j] = j >= a ? max(dp[i - 1][j - a] + b, dp[i - 1][j]) : dp[i - 1][j];
-//			dp[i][j] = j >= (a + c) ? max(dp[i - 1][j - a - c] + b + d, dp[i][j]) : dp[i][j];
-//			dp[i][j] = j >= (a + e) ? max(dp[i - 1][j - a - e] + b + f, dp[i][j]) : dp[i][j];
-//			dp[i][j] = j >= (a + c + e) ? max(dp[i - 1][j - a - c - e] + b + d + f, dp[i][j]) : dp[i][j];
-// 		}
-//	}
-//	cout << dp[m][N] * 10 << endl;
-//	return 0;
-//}
+
+int main()
+{
+	int N, m;
+	cin >> N >> m;
+	N /= 10;
+	vector<vector<int> > prices(61, vector<int>(3,0));
+	vector<vector<int> > priceMutiplyPriority(61, vector<int>(3.0));
+	for (int i = 1; i <= m; i++)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+		a /= 10;
+		b *= a;
+		if (c == 0)
+		{
+			prices[i][0] = a;
+			priceMutiplyPriority[i][0] = b;
+		}
+		else
+		{
+			if (prices[c][1] == 0)
+			{
+				prices[c][1] = a;
+				priceMutiplyPriority[c][1] = b;
+			}
+		}
+	}
+	vector<vector<int> > dp(m + 1, vector<int>(N + 1, 0));
+	for (int i = 1; i <= m; ++i)
+	{
+		for (int j = 1; j <= N; ++j)
+		{
+			int a = prices[i][0], b = priceMutiplyPriority[i][0];
+			int c = prices[i][1], d = priceMutiplyPriority[i][1];
+			int e = prices[i][2], f = priceMutiplyPriority[i][2];
+			dp[i][j] = j >= a ? max(dp[i - 1][j - a] + b, dp[i - 1][j]) : dp[i - 1][j];
+			dp[i][j] = j >= (a + c) ? max(dp[i - 1][j - a - c] + b + d, dp[i][j]) : dp[i][j];
+			dp[i][j] = j >= (a + e) ? max(dp[i - 1][j - a - e] + b + f, dp[i][j]) : dp[i][j];
+			dp[i][j] = j >= (a + c + e) ? max(dp[i - 1][j - a - c - e] + b + d + f, dp[i][j]) : dp[i][j];
+ 		}
+	}
+	cout << dp[m][N] * 10 << endl;
+	return 0;
+}
 
 
 
