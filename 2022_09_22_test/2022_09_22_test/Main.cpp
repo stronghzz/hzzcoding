@@ -3,6 +3,17 @@
 using namespace std;
 
 
+int main()
+{
+
+	//int* p;
+	//char* p1;
+	//cout << sizeof(p) << endl;
+	//cout << sizeof(p1);
+
+	return 0;
+}
+
 //int main()
 //{
 //	int n = 0;
@@ -28,30 +39,30 @@ using namespace std;
 //	return 0;
 //}
 
-int main()
-{
-	int n;
-	while (cin >> n)
-	{
-		int ans = 0;
-		if (n == 0)
-		{
-			break;
-		}
-		while (n >= 3)
-		{
-			ans += n / 3;
-			n = n / 3 + n % 3;
-		}
-		if (n == 2)
-		{
-			ans++;
-		}
-		cout << ans << endl;
-	}
-
-	return 0;
-}
+//int main()
+//{
+//	int n;
+//	while (cin >> n)
+//	{
+//		int ans = 0;
+//		if (n == 0)
+//		{
+//			break;
+//		}
+//		while (n >= 3)
+//		{
+//			ans += n / 3;
+//			n = n / 3 + n % 3;
+//		}
+//		if (n == 2)
+//		{
+//			ans++;
+//		}
+//		cout << ans << endl;
+//	}
+//
+//	return 0;
+//}
 
 //int main()
 //{
