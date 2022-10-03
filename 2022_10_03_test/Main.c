@@ -1,7 +1,21 @@
 #include <stdio.h>
+
+int main()
+{
+	char str[10];
+	while( fgets(str,11,stdin) != NULL )
+	{
+		printf("%s\n",str);
+	}
+	return 0;
+}
+
+
+
+/* #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#define MAX_COLS 20
+#include <string.h> */
+/* #define MAX_COLS 20
 #define MAX_INPUT 1000
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -59,4 +73,4 @@ void rearrange(char* output, char const* input, int n_columns, int const columns
 	}
 	output[output_col] = '\0';
 
-}
+} */
