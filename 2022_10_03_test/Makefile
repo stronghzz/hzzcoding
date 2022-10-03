@@ -1,2 +1,4 @@
 Main:Main.c
-	gcc Main.c -o Main
+	gcc -g Main.c -o Main
+clean:
+	rm Main
