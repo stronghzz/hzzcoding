@@ -17,6 +17,10 @@ List *CreatList()
 
 void AddLastNode(List *l, int val)
 {
+    if(l == NULL)
+    {
+        return;
+    }
     List *_l = (List *)malloc(sizeof(List));
     _l->val = val;
     _l->next = NULL;
@@ -28,7 +32,11 @@ void AddLastNode(List *l, int val)
 }
 void ShowList(List *l)
 {
-    while (l->next != NULL)
+    if(l == NULL)
+    {
+        return;
+    }
+    while (l != NULL)
     {
         printf("%d\n", l->val);
         l = l->next;
