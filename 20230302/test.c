@@ -17,7 +17,7 @@ List *CreatList()
 
 void AddLastNode(List *l, int val)
 {
-    if(l == NULL)
+    if (l == NULL)
     {
         return;
     }
@@ -30,9 +30,10 @@ void AddLastNode(List *l, int val)
     }
     l->next = _l;
 }
+
 void ShowList(List *l)
 {
-    if(l == NULL)
+    if (l == NULL)
     {
         return;
     }
@@ -42,12 +43,26 @@ void ShowList(List *l)
         l = l->next;
     }
 }
+
+void deletlast(List *l)
+{
+    List *_l = (List *)malloc(sizeof(List));
+    _l = l;
+    while (_l->next->next != NULL)
+    {
+        _l = _l->next;
+    }
+    free(_l->next);
+    _l->next = NULL;
+}
 int main()
 {
     List *l = CreatList();
-    AddLastNode(l,1);
-    AddLastNode(l,2);
-    AddLastNode(l,3);
+    AddLastNode(l, 1);
+    AddLastNode(l, 2);
+    AddLastNode(l, 3);
+    ShowList(l);
+    deletlast(l);
     ShowList(l);
     return 0;
 }
