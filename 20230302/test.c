@@ -46,6 +46,10 @@ void ShowList(List *l)
 
 void deletlast(List *l)
 {
+    if(l == NULL)
+    {
+        return;
+    }
     List *_l = (List *)malloc(sizeof(List));
     _l = l;
     while (_l->next->next != NULL)
@@ -55,14 +59,20 @@ void deletlast(List *l)
     free(_l->next);
     _l->next = NULL;
 }
-int main()
+
+void test()
 {
     List *l = CreatList();
+    List **L = &l;
     AddLastNode(l, 1);
     AddLastNode(l, 2);
     AddLastNode(l, 3);
     ShowList(l);
     deletlast(l);
     ShowList(l);
+}
+int main()
+{
+    test();
     return 0;
 }
