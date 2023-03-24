@@ -42,29 +42,43 @@ void pop(int* p,int length)
 		}
 	}
 }
+enum day
+{
+	MON=1,TUE,WED,THU,FRI,SAT,SUN
+};
 
 int main()
 {
-	MyList* L = CreatList();
+	// int a = 1;
+	// int *p = &a;
+	// enum day Day;
+	// Day = 1;
+	// printf("%d\n",Day);
+	// printf("%p\n",p);
+	//MyList* L = CreatList();
+	// ListNode head;
+	// head.val = 0;
+	// head.next = NULL;
+	//ListNode* l = &head;
 	// int arr[5] = { 5, 2, 3, 4, 6 };
 	// pop(arr,5);
 	// for(int i = 0; i < 5; i++ )
 	// {
 	// 	printf("%d\t",arr[i]);
 	// }
-	ListNode* head = (ListNode*)malloc(sizeof(ListNode));
-	head->next = NULL;
-	head->val = 0;
-	ListNode** l = &head;
-	printf("%d", (*l)-> val);
-	printf("\n%d\n",sizeof(MyList*));
-	printf("%d\n",sizeof(int*));
-	printf("%d\n",35);
-	printf("%c\n",10);
-	printf("%c\n",97);
-	printf("%c\n",32);
-	printf("%c\n",357);
-	printf("hello,world\n");
+	//ListNode* head = (ListNode*)malloc(sizeof(ListNode));
+	//head->next = NULL;
+	//head->val = 0;
+	//ListNode** l = &head;
+	// printf("%d", (*l)-> val);
+	// printf("\n%d\n",sizeof(MyList*));
+	// printf("%d\n",sizeof(int*));
+	// printf("%d\n",35);
+	// printf("%c\n",10);
+	// printf("%c\n",97);
+	// printf("%c\n",32);
+	// printf("%c\n",357);
+	// printf("hello,world\n");
 	//printf("%d\n",L->val);
 	return 0;		
 }
