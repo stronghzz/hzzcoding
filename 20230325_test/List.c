@@ -49,6 +49,8 @@ enum day
 
 int main()
 {
+	int a = 5;
+	printf( "%d,%d,%d\n", a++, a++, ++a );
 	// int a = 1;
 	// int *p = &a;
 	// enum day Day;
